@@ -1,18 +1,16 @@
 import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
-export default function policyCategoryReducer(state = initialState.policyCategories, action) {
+const policyCategoryReducer = (state = initialState.policyCategories, action) => {
+
   switch(action.type) {
-    case types.LOAD_POLICY_CATEGORIES_SUCCESS: {
+    case types.LOAD_POLICY_CATEGORIES_SUCCESS:
       return action.categories;
-    }
-
-    case types.LOAD_POLICY_CATEGORIES_ERROR: {
+    case types.LOAD_POLICY_CATEGORIES_ERROR:
       return state;
-    }
-
-    default: {
+    default:
       return state;
-    }
   }
 }
+
+export default policyCategoryReducer;

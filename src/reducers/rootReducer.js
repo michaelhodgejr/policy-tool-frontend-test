@@ -3,6 +3,6 @@ import policyCategories from './policyCategoryReducer';
 
 const rootReducer = combineReducers({
   policyCategories
-})
+});
 
 export default rootReducer;
