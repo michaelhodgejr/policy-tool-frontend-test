@@ -1,0 +1,12 @@
+{
+  "policy_categories": [
+    {
+      "guid": "84123d8e-8809-4d10-a183-220f72645b57",
+      "name": "Student Handbook"
+    },
+    {
+      "guid": "0ce4bc31-7a6d-4ddc-8edc-47a1e6ed57f8",
+      "name": "Employee Handbook"
+    }
+  ]
+}
