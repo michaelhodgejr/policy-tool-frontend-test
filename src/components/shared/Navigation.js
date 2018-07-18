@@ -1,15 +1,46 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {
+  Container,
+  Dropdown,
+  Menu,
+} from 'semantic-ui-react';
 
-const Navigation = () => {
+class Navigation extends React.Component {
+
+  render() {
     return (
-      <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/policy_categories">Policy Category List</Link></li>
-        </ul>
-      </div>
-  )
+      <Container>
+        <Menu fixed='top' inverted>
+          <Container>
+            <Menu.Item header>
+              Policy Tool
+            </Menu.Item>
+            <Menu.Item as='a'><Link to="/">Home</Link></Menu.Item>
+            <Menu.Item as='policy_categories'><Link to="/policy_categories">Policy Categories List</Link></Menu.Item>
+
+            <Dropdown item simple text='Dropdown'>
+              <Dropdown.Menu>
+                <Dropdown.Item>List Item</Dropdown.Item>
+                <Dropdown.Item>List Item</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Header>Header Item</Dropdown.Header>
+                <Dropdown.Item>
+                  <i className='dropdown icon' />
+                  <span className='text'>Submenu</span>
+                  <Dropdown.Menu>
+                    <Dropdown.Item>List Item</Dropdown.Item>
+                    <Dropdown.Item>List Item</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown.Item>
+                <Dropdown.Item>List Item</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Container>
+        </Menu>
+      </Container>
+    );
+  }
 };
 
 export default Navigation;
