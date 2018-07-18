@@ -4,8 +4,8 @@ import policyApi from '../api/policyApi';
 export function loadPolicyCategories() {
   // make async call to api, handle promise, dispatch action when promise is resolved
   return dispatch => {
-    return dispatch(loadPolicyCategoriesLoading());
-
+    dispatch(loadPolicyCategoriesLoading());
+    
     return policyApi.getAllPolicyCategories().then(categories => {
       dispatch(loadPolicyCategoriesSuccess(categories));
     }).catch(error => {
@@ -15,7 +15,7 @@ export function loadPolicyCategories() {
 }
 
 export function loadPolicyCategoriesLoading() {
-  return {type: types.LOAD_POLICY_CATEGORIES_SUCCESS};
+  return {type: types.LOAD_POLICY_CATEGORIES_LOADING};
 }
 
 export function loadPolicyCategoriesSuccess(categories) {

@@ -12,7 +12,7 @@ class PolicyCategoryList extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.policyCategories.map(category =>
+          {this.props.policyCategories.map(category =>
             <tr key={category.guid}>
               <td>{category.name}</td>
               <td></td>
