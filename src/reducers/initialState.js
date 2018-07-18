@@ -1,3 +1,8 @@
 export default {
-  policyCategories: [],
+  policyCategories: {
+    isLoading: false,
+    hasError: false,
+    error: null,
+    categories: []
+  },
 }

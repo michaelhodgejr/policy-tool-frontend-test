@@ -1,7 +1,8 @@
 import React from 'react';
+import Navigation from '../components/shared/Navigation';
 
 const DashboardPage = () => (
-   <p>Dashboard Page</p>
+  <Navigation />
 );
 
 export default DashboardPage;

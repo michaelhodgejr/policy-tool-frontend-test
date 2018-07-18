@@ -1,20 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import PolicyCategoryList from '../components/policy_categories/policy_category_list';
 import { loadPolicyCategories } from '../actions/policyCategoryActions';
 import { connect } from 'react-redux';
+import Spinner from '../components/shared/Spinner';
 
 class PolicyCategoryPage extends React.Component{
   render() {
-     return(
-       <PolicyCategoryList policyCategories={this.props.policyCategories} />
-     )
+    return (
+      <div>
+        {this.props.isLoading ? <Spinner /> : <PolicyCategoryList policyCategories={this.props.policyCategories} />}
+      </div>
+    )
   }
 }
 
 function mapStateToProps(state, ownProps) {
   return {
-    policyCategories: state.policyCategories
+    policyCategories: state.policyCategories.categories,
+    isLoading: state.policyCategories.isLoading,
+    hasError: state.policyCategories.hasError
   }
 }
 
@@ -22,10 +26,6 @@ function mapDispatchToProps(dispatch) {
   return {
     loadPolicyCategories: dispatch(loadPolicyCategories())
   }
-}
-
-PolicyCategoryPage.propTypes = {
-  policyCategories: PropTypes.array.isRequired,
 }
 
 export default connect(
